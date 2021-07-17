@@ -1,5 +1,8 @@
 package com.example.loggingTest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -19,7 +22,7 @@ public class LoggingTestApplication extends Application<LoggingTestConfiguration
 
     @Override
     public void initialize(final Bootstrap<LoggingTestConfiguration> bootstrap) {
-        // TODO: application initialization
+        bootstrap.setObjectMapper(new ObjectMapper(new YAMLFactory()));
     }
 
     @Override
