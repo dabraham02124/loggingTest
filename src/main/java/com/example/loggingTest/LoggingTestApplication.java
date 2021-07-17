@@ -6,6 +6,8 @@ import io.dropwizard.setup.Environment;
 
 public class LoggingTestApplication extends Application<LoggingTestConfiguration> {
 
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(LoggingTestApplication.class);
+
     public static void main(final String[] args) throws Exception {
         new LoggingTestApplication().run(args);
     }
@@ -23,7 +25,9 @@ public class LoggingTestApplication extends Application<LoggingTestConfiguration
     @Override
     public void run(final LoggingTestConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        log.info("------------------- into run!!!! -------------------");
     }
 
+    @Override
+    protected void bootstrapLogging() { }
 }

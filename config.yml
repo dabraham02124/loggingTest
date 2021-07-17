@@ -1,4 +1,2 @@
 logging:
-  level: INFO
-  loggers:
-    com.example: DEBUG
+  type: external
